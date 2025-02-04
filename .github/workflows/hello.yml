@@ -1,16 +1,8 @@
-name: ci
-'on':
-  - push
+name: hello-world
+on: push
 jobs:
-  build-and-test:
-    strategy:
-      matrix:
-        os:
-          - ubuntu-latest
-    runs-on: '${{ matrix.os }}'
+  my-job:
+    runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v1
-      - name: do stuff
-        run: |
-          bash stuff
+      - name: my-step
+        run: echo "Hello World!"
