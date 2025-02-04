@@ -1,0 +1,16 @@
+name: ci
+'on':
+  - push
+jobs:
+  build-and-test:
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+    runs-on: '${{ matrix.os }}'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: do stuff
+        run: |
+          bash stuff
